@@ -13,7 +13,13 @@ public class JokeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_joke);
 
+        String joke="NO JOKE FROM INTENT";
+        Bundle extras = getIntent().getExtras();
+        if(extras!=null){
+            joke = extras.getString("JOKE");
+        }
+
         TextView textView = findViewById(R.id.textView);
-        textView.setText(JavaJokes.getJoke());
+        textView.setText(joke);
     }
 }

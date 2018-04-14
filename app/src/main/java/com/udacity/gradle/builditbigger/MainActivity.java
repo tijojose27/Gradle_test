@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, JavaJokes.getJoke() , Toast.LENGTH_SHORT).show();
 
         Intent intent = new Intent(this, JokeActivity.class);
+        intent.putExtra("JOKE", JavaJokes.getJoke());
 
         startActivity(intent);
     }
